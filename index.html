@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SkyCast</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="top-nav">
+    <div class="brand">
+      <span class="logo-icon">🌤️</span>
+      <div>
+        <span class="logo-title">SkyCast</span>
+        <span class="logo-sub">Weather made simple</span>
+      </div>
+    </div>
+    <div style="display: flex; gap: 10px; align-items: center;">
+      <button id="unitToggleBtn" class="unit-toggle-btn">Switch to °F</button>
+      <div class="live-pill">
+        <span class="pill-dot"></span> Live Weather
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Search Section -->
+    <section class="search-section">
+      <h1>Check the weather anywhere</h1>
+      <p class="tagline">Search any city for current weather and a 5-day forecast</p>
+      
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter a city, e.g. Colombo" />
+        <button id="searchBtn">Search</button>
+      </div>
+      
+      <p id="statusMsg" class="status-msg"></p>
+    </section>
+
+    <!-- Current Weather Card (Hidden by default until searched) -->
+    <section class="current-weather-card" id="currentWeatherCard">
+      <div class="current-header">
+        <h2 id="cityName">--</h2>
+        <span id="currentConditionBadge" class="weather-badge">--</span>
+      </div>
+      <div class="weather-grid">
+        <div class="detail-item">
+          <span class="label">Temperature</span>
+          <span class="val"><strong id="currentTemp">--</strong> <span id="currentTempUnit">°C</span></span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Wind Speed</span>
+          <span class="val"><strong id="currentWind">--</strong> km/h</span>
+        </div>
+        <div class="detail-item">
+          <span class="label">Condition</span>
+          <span class="val" id="currentCondition">--</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5-Day Forecast Table Section -->
+    <section class="forecast-section">
+      <div class="forecast-title-row">
+        <div>
+          <h3>5-Day Forecast</h3>
+          <p class="forecast-sub">Upcoming weather conditions</p>
+        </div>
+        <span class="calendar-icon">📅</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="forecastTable">
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>CONDITION</th>
+              <th id="maxTempHeader">MAX °C</th>
+              <th id="minTempHeader">MIN °C</th>
+              <th>PRECIPITATION (MM)</th>
+            </tr>
+          </thead>
+          <tbody id="forecastBody">
+            <!-- Dynamic rows will be inserted here by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-logo">
+      <span>🌤️</span> <strong>SkyCast</strong>
+    </div>
+    <p>Simple, fast and reliable weather information</p>
+    <p class="copyright">© 2026 SkyCast · Powered by Open-Meteo</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
